@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
     
@@ -20,6 +21,20 @@ class ViewController: UIViewController {
         present(showVC, animated: true, completion: nil)
                 
     }
-
+    
+    @IBAction func myAnswerBtnPressed(_ sender: Any) {
+        
+        let urlNew = "https://www.apple.com/macbook-air/"
+        guard let url = URL(string: urlNew) else { return }
+        
+        let SafariVC = SFSafariViewController(url: url)
+        
+        SafariVC.preferredBarTintColor = .red
+        SafariVC.preferredControlTintColor = .green
+        
+        present(SafariVC, animated: true)
+        
+    }
+    
 }
 
